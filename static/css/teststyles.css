@@ -1,0 +1,141 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+
+.sidenavigation{
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top:50px;
+    text-align: left;
+}
+
+.sidenavigation a{
+    padding-left: 20px;
+    padding-top: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    text-align: left;
+    
+}
+
+.sidenavigation a:hover{
+    color: pink;
+}
+
+.sidenavigation img{
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.container-fluid{
+    width: 100%;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.product{
+    padding: 30px;
+}
+
+.product img{
+    width: 400px;
+    height: 500px;
+}
+
+.product h1{
+    margin-top:15px;
+    padding: 10px;
+}
+
+.postarea{
+    margin-left: 300px;
+    text-align: left;
+    padding: 30px;
+
+}
+
+.postarea a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer{
+    text-align: center;
+    clear: both;
+    height: 40px;
+    bottom: 0;
+    margin-top: 80px;
+    color: white;
+    
+}
+
+.col-sm{
+    margin: 20px;
+    font-size: 50px;
+}
+
+.cart-container{
+    color: white;
+    text-decoration: none;
+}
+
+.order{
+    color: white;
+    text-decoration: none; 
+}
+
+
+.imgprod{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.imgprod img{
+    width:500px;
+    height: 600px;
+}
+
+#myVideo {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+
+@media screen and (max-width: 768px){
+    .sidenavigation{
+        widows: 100%;
+        height: auto;
+        position: sticky;
+        text-align: center;
+    }
+
+    .sidenavigation{
+        width: 100%;
+        position: relative;
+        float: none;
+        display: inline-block;
+    }
+
+    .main{
+        margin-left: 0;
+        margin-bottom: 50px;
+}
+
+@media screen and (max-width:400px;){
+    .sidenavigation a{
+        text-align: right;
+        float: none;
+    }
+}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for product in products %}
+        {% if product.available == True %}
+            <div class="product">  
+                <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/def.jpeg' %}  {% endif %}" class="img-fluid"></a>
+                <h1>{{ product.name }}</h1>
+                <h3>{{ product.price }} PLN</h3>
+                <a href="{{ product.get_absolute_url  }}"><button>Pokaż</button></a>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
