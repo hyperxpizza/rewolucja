@@ -1,0 +1,32 @@
+/* small devices, phones etc. */
+@media only screen and (max-width: 600px){
+    .sidenavigation{
+        text-align: center;
+    }
+
+    
+}
+
+/* tablets */
+@media only screen and (min-width:600px){
+
+    .sidenavigation{
+        text-align: center;
+    }
+}
+
+/* medium devices */
+@media only screen and (min-width:768px){
+
+}
+
+/* large devices */
+@media only screen and (min-width:992px){
+
+}
+
+/* xl devices */
+@media only screen and (min-width:1200px){
+
+}
+
