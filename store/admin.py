@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product
+from .models import Category, Product, ProductImage
 # Register your models here.
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -8,10 +8,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Category,CategoryAdmin)
 
+class ProductImageInLine(admin.TabularInline):
+    model = ProductImage
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'price', 'stock', 'available', 'created_at', 'updated_at', 'slug']
     list_filter = ['available', 'created_at', 'updated_at']
     list_editable = ['price', 'stock', 'available']
     prepopulated_fields = {'slug': ('name',)}
+    inlines = [ProductImageInLine,]
 
 admin.site.register(Product,ProductAdmin)

@@ -30,8 +30,7 @@ class Product(models.Model):
     stock = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
-
+    
     slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
 
     class Meta:
@@ -41,20 +40,9 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('store:product_detail',args=[self.id,self.slug])
 
-    def sold_out_image(self):
-        photo = Image.open(self.image)
-        watermark = Image.open('../static/img/watermark.png')
-        photo.paste(watermark, (25,25), watermark)
-        return photo
-
     def __str__(self):
         return self.name
 
-#class Images(models.Model):
-#   user = models.ForeignKey(User)
-#   title = models.CharField(max_length=100)
-#     body = models.CharField(max_length=150)
-
-#    def get_image_filename(instance, filename):
-#        id = instance.Product.id
-#        return 
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, related_name='images', on_delete=models.DO_NOTHING)
+    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
