@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'NOT THIS TIME'
+SECRET_KEY = '2h#@do#dgwuh+uidnklqn=-m_rx%4)=x@cg(4xof^_zt+70ec&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -137,8 +136,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #cart session
 CART_SESSION_ID = 'cart'
-
-#email backend
-
-
-django_heroku.settings(locals())
