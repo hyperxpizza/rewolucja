@@ -20,7 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'y!b%=-tlo)q(d0q_#7+tlpy@^z$j)3bt=7oa0so!gh61j$976b'
+=======
+SECRET_KEY = 
+>>>>>>> 77c23b7c6111f1303e51e51278b009f75eaa2cc5
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -136,5 +140,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #cart session
 CART_SESSION_ID = 'cart'
-
-#email backend

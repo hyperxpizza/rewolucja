@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 # Create your models here.
-from PIL import Image
+
 
 class Category(models.Model):
     name = models.CharField(max_length=150, blank=True, null=True)
