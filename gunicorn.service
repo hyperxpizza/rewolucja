@@ -1,0 +1,18 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=fracu
+Group=www-data
+WorkingDirectory=/home/fracu/strona/rewolucja
+ExecStart=/home/fracu/strona/venv/bin/gunicorn \
+        --access-logfile - \
+        --workers 3 \
+        --bind unix:/run/gunicorn.sock \
+        rewolucja.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+

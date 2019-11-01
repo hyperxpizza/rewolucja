@@ -30,6 +30,7 @@ class Product(models.Model):
     stock = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     
     slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
 
@@ -43,6 +44,6 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-class ProductImage(models.Model):
-    product = models.ForeignKey(Product, related_name='images', on_delete=models.DO_NOTHING)
-    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+#class ProductImage(models.Model):
+#    product = models.ForeignKey(Product, related_name='images', on_delete=models.DO_NOTHING)
+    

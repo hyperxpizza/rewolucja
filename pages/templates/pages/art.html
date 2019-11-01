@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block customCss %}
+    <link rel="stylesheet" href="{% static 'css/art.css' %}">
+{% endblock %}
 {% block content %}
-
-{% endblock content %}
-
-{% block customJs %}
-{% endblock customJs %}
+    {% for image in images %}
+        <div class="image">
+            <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid">
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y!b%=-tlo)q(d0q_#7+tlpy@^z$j)3bt=7oa0so!gh61j$976b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['46.41.135.147', 'rewolucja.com.pl']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'pages',
     'ckeditor',
     'ckeditor_uploader',
+    'taggit',
+    'crispy_forms',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -82,7 +84,7 @@ WSGI_APPLICATION = 'rewolucja.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -91,6 +93,13 @@ DATABASES = {
         'PASSWORD': 'Wojtekfoka1',
         'HOST': 'localhost',
         'PORT': '',   
+    }
+}
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -132,9 +141,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #cart session
 CART_SESSION_ID = 'cart'
+
+#CRISPY TEMPLATE
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

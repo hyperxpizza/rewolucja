@@ -1,9 +1,15 @@
 {% load static %}
 <div id="sidenav" class="sidenavigation">
-    <a href="{% url 'pages:about' %}"><img src="{% static 'img/logo2.png' %}" alt=""></a>
-    <a href="{% url 'pages:about' %}">About</a>
-    <a href="{% url 'blog:all_posts' %}">Blog</a>
-    <a href="{% url 'store:all_products' %}">Store</a>
-    <a href="{% url 'pages:art' %}">Art</a>
-    <a href="{% url 'pages:contact' %}">Contact</a>
+    
+    <div id="logo_btn">
+        <img src="{% static 'img/logo2.png' %}" alt="">
+    </div>
+    
+    <div id="menu">
+        <a href="{% url 'pages:about' %}">About</a>
+        <a href="{% url 'blog:all_posts' %}">Blog</a>
+        <a href="{% url 'store:all_products' %}">Store</a>
+        <a href="{% url 'pages:art' %}">Art</a>
+        <a href="{% url 'pages:contact' %}">Contact</a>
+    </div>
 </div>

@@ -22,11 +22,9 @@ def all_products(request, category_slug=None):
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     cart_product_form = CartAddProductForm()
-    images = product.images.all()
     context = {
         'product':product,
         'cart_product_form':cart_product_form,
-        'images': images,
     }
 
     return render(request, 'store/detail_product.html', context)

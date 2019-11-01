@@ -1,42 +1,41 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block customCss %}
-<link rel="stylesheet" href="{% static 'css/detail_product.css' %}">
+  <link rel="stylesheet" href="{% static 'css/store.css' %}">
 {% endblock %}
 {% block content %}
-   <div class="container" style="text-align: center;">
-      <div class="row" style="margin-top: 6%">
+  <div id="product" class="container-fluid">
+    
+    
+    <div id="productimage">
+      <img src="{{product.image.url}}" alt="{{product.name}}" class="img-fluid">
+    </div>
+    
+    
+    <div id="productdata">
+        
+      <h2>
+        {{product.name}}
+      </h2>
 
-        <div class="col-sm-8 blog-main">
-
-          <div class="blog-post">
-              <div class="row">
-                      <div class="image">
-                        {% if product.image %}
-                        <img class="product_image" src="{{ product.image.url }}" alt="{{ product.name }}" />
-                        {% elif product.stock == 0 %}
-                        <img src="{{ product.sold_out_image }}" alt="" class="product_image">
-                        {% else %}
-                        <img class="product_image" src="{% static 'img/def.jpeg' %}">
-                        {% endif %}
-                      </div>
-                        <div class="col-md-6" style="padding-left: 20px">
-                            <h3>{{ product.name }}</h3>
-                            
-                            <p class="text-muted">{{ product.price }}</p>
-                            <form action="{% url "cart:cart_add" product.id %}" method="post">
-                                {% csrf_token %}
-                                {{ cart_product_form }}
-                                <input type="submit" value="Do Koszyka" class="btn btn-primary">
-                            </form>
-                            <p>{{ product.description|safe|linebreaksbr }}</p>
-                        </div>
-                    </div>
-            
-          </div><!-- /.blog-post -->
-
-        </div><!-- /.blog-main -->
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
+      <p>
+        {{ product.description|safe|linebreaksbr }}
+      </p>
+      
+      <p>
+        {{product.price}} PLN
+      </p>
+      
+      <div id="productform">
+        <form action="{% url "cart:cart_add" product.id %}" method="post">
+          {% csrf_token %}
+          {{ cart_product_form }}
+          <input type="submit" value="Do Koszyka">
+        </form>
+      </div>
+    
+    </div>
+  </div>                  
 {% endblock %}
+
+

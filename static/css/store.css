@@ -1,0 +1,22 @@
+#store{
+    margin-top: 40px;
+}
+
+.product_all_data{
+    margin-top: 20px;
+}
+
+#product{
+    overflow: hidden;
+    padding-left:10%;
+    margin-top: 5%;
+}
+
+#productimage{
+    float: left;
+}
+
+#productdata{
+    margin-top: 10%;
+    overflow: hidden;
+}
