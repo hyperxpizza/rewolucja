@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = ''
+SECRET_KEY = '=2u7%h$txxz0@r(r&^fm*1ce--4(mv#i#9dy@dy98j-kbarwbg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -157,3 +156,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#CKE uploader path  
+CKEDITOR_UPLOAD_PATH = 'uploads/'
