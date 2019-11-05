@@ -18,6 +18,7 @@ from django.urls import path
 from django.urls.conf import include
 
 from django.conf import settings
+from django.urls.conf import handler404, handler500, handler403, handler400
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -28,4 +29,10 @@ urlpatterns = [
     path('orders/', include('orders.urls')),
     path('', include('pages.urls')),
     path("r'^ckeditor/" , include('ckeditor_uploader.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+
+#error handlers
+handler404 = 'rewolucja.views.handler404'
+handler500 = 'rewolucja.views.handler500'
+handler403 = 'rewolucja.views.handler403'
+handler400 = 'rewolucja.views.handler400'
