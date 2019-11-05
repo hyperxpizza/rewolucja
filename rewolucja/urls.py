@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls.conf import include
+from django.urls.conf import include, url
 
 from django.conf import settings
 from django.urls.conf import handler404, handler500, handler403, handler400
@@ -29,6 +29,7 @@ urlpatterns = [
     path('orders/', include('orders.urls')),
     path('', include('pages.urls')),
     path("r'^ckeditor/" , include('ckeditor_uploader.urls')),
+    url('^payments/', include('payments.urls')),
 ] 
 
 #error handlers
