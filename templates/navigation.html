@@ -9,6 +9,11 @@
         <a href="{% url 'pages:about' %}">About</a>
         <a href="{% url 'blog:all_posts' %}">Blog</a>
         <a href="{% url 'store:all_products' %}">Store</a>
+            <div id="storeSubmenu">
+                {% for category in categories %}
+                    <a href="{% url 'store:category_detail' {{category.name}} %}">{{category.name}}</a>
+                {% endfor %}
+            </div>
         <a href="{% url 'pages:art' %}">Art</a>
         <a href="{% url 'pages:contact' %}">Contact</a>
     </div>

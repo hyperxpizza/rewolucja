@@ -26,7 +26,7 @@ SECRET_KEY = ''
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['46.41.135.147','rewolucja.com.pl']
+ALLOWED_HOSTS = ['46.41.135.147','rewolucja.com.pl', 'localhost']
 
 
 # Application definition

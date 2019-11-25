@@ -9,7 +9,14 @@ def all_products(request, category_slug=None):
 
     if category_slug:
         category = get_object_or_404(Category,slug=category_slug)
-        products = Product.objects.filter(category = category)
+        products = Product.objects.filter(category = category, available=True)
+
+        context = {
+            'category': category,
+            'products': products
+        }
+
+        return render(request, 'store/category_detail.html', context)
 
     context = {
         'category': category,
@@ -28,3 +35,4 @@ def product_detail(request, id, slug):
     }
 
     return render(request, 'store/detail_product.html', context)
+

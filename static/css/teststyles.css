@@ -39,6 +39,12 @@ body{
     color: pink;
 }
 
+/* Sub navigation */
+#storeSubmenu {
+    font-size: 15px;
+    display: hidden;
+}
+
 /* Content */
 #content {
     text-align: center;
