@@ -17,7 +17,7 @@
                     Opublikowany {{post.publish}}
                 </p>
 
-                {{ post.text|truncatewords:30|linebreaks }}
+                {{ post.text|truncatewords:30|linebreaks|safe }}
             </div>
         {% endfor %}
     
