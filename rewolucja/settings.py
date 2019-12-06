@@ -27,8 +27,12 @@ SECRET_KEY = 'x_!)65tucrtfc4e@*nsp8hfm67gn)$gs9hp1n0m7jr^_4wta%4'
 #DEBUG = FALSE
 DEBUG = False
 
+<<<<<<< HEAD
 
 ALLOWED_HOSTS = ['46.41.135.147','rewolucja.com.pl']
+=======
+ALLOWED_HOSTS = ['46.41.135.147','rewolucja.com.pl', 'localhost']
+>>>>>>> a7a6b280b7787058518f9690891954d07642cfef
 
 
 # Application definition
@@ -49,8 +53,13 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'taggit',
     'crispy_forms',
+    'payments',
 ]
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a7a6b280b7787058518f9690891954d07642cfef
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

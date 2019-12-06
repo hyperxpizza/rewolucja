@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls.conf import include
+from django.urls.conf import include, url
 
 from django.conf import settings
+from django.urls.conf import handler404, handler500, handler403, handler400
 from django.conf.urls.static import static
 
 urlpatterns = [
