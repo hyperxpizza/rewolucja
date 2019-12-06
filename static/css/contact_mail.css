@@ -6,3 +6,8 @@
 form{
     width: 50%;
 }
+
+#success {
+    margin-top: 20%;
+    font-size: 20px;
+}

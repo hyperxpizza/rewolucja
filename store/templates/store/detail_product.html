@@ -2,16 +2,31 @@
 {% load static %}
 {% block customCss %}
   <link rel="stylesheet" href="{% static 'css/store.css' %}">
+  <link rel="stylesheet" href="{% static 'css/imageslider.css' %}"> 
+{% endblock %}
+{% block customJs %}
+  <link rel="stylesheet" href="{% static 'js/indexslider.js' %}">
 {% endblock %}
 {% block content %}
-  <div id="product" class="container-fluid">
-    
-    
+  <div id="product_detail" class="container-fluid">
     <div id="productimage">
-      <img src="{{product.image.url}}" alt="{{product.name}}" class="img-fluid">
+      <img src="{{product.image.url}}" alt="" class="img-fluid">
     </div>
-    
-    
+
+    <!--<div id="productimage">
+      <div id="slider">
+          <a href="#" class="control_next">></a>
+          <a href="#" class="control_prev"><</a>
+          <ul>
+            {% for image in images %}
+              <li>
+                  <img src="{{image.image.url}}">
+              </li>
+            {% endfor %}
+          </ul>  
+      </div>
+    </div>-->
+      
     <div id="productdata">
         
       <h2>

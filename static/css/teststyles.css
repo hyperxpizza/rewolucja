@@ -39,6 +39,11 @@ body{
     color: pink;
 }
 
+#storeMenu {
+    font-size: 15px;
+    text-align: center;
+}
+
 /* Content */
 #content {
     text-align: center;

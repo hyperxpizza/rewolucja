@@ -1,8 +1,6 @@
 from django.db import models
 from django.urls import reverse
 from ckeditor.fields import RichTextField
-# Create your models here.
-
 
 class Category(models.Model):
     name = models.CharField(max_length=150, blank=True, null=True)
@@ -16,7 +14,7 @@ class Category(models.Model):
         verbose_name_plural = 'categories'
 
     def get_absolute_url(self):
-        return reverse('store:all_products',args=[self.slug])
+        return reverse('store:category_detail',args=[self.slug])
 
     def __str__(self):
         return self.name
@@ -44,6 +42,6 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-#class ProductImage(models.Model):
-#    product = models.ForeignKey(Product, related_name='images', on_delete=models.DO_NOTHING)
-    
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, related_name='images', on_delete=models.DO_NOTHING)
+    image = models.ImageField()

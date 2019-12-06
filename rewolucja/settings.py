@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
+import os, sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x_!)65tucrtfc4e@*nsp8hfm67gn)$gs9hp1n0m7jr^_4wta%4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = FALSE
 DEBUG = False
+
 
 ALLOWED_HOSTS = ['46.41.135.147','rewolucja.com.pl']
 
@@ -82,6 +84,7 @@ WSGI_APPLICATION = 'rewolucja.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+#
 
 DATABASES = {
     'default': {
@@ -93,6 +96,14 @@ DATABASES = {
         'PORT': '',   
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -146,7 +157,23 @@ CART_SESSION_ID = 'cart'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "studio.rewo@gmail.com"
+EMAIL_HOST_PASSWORD = "rewolucja123"
 
 #CKEUPLOADER PATH
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+
+#Braintree backend
+#if len(sys.argv) >= 2 and sys.argv[1] == 'runserver':
+#    BRAINTREE_PRODUCTION = False
+#else:
+#    BRAINTREE_PRODUCTION = True
+
+#BRAINTREE_MERCHANT_ID = 'your_merchant_id'
+#BRAINTREE_PUBLIC_KEY = 'your public key'
+#BRAINTREE_PRIVATE_KEY = 'your private key'

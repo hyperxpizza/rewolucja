@@ -1,6 +1,8 @@
 from django import forms
 from store.models import Product
+
 PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1,11)]
+SHIPPING_CHOICES = ["Za pobraniem"]
 
 
 class CartAddProductForm(forms.Form):

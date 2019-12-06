@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block customCss %}
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
 {% block content %}
-    <div class="cart-container">
-    <div class="container">
+    <div class="container-fluid">
+        <div class="cart-container">
         <div class="row" style="margin-top: 6%">
             {% with totail_items=cart|length %}
             <h2>
@@ -64,8 +67,7 @@
             </p>
         
             <button><a href="{% url 'orders:order_create' %}">Zamów</a></button>
-        
         </div>
-    </div>
-    </div>  
+        </div>
+    </div> 
 {% endblock %}
