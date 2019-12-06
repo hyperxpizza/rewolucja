@@ -21,18 +21,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'x_!)65tucrtfc4e@*nsp8hfm67gn)$gs9hp1n0m7jr^_4wta%4'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = FALSE
 DEBUG = False
 
-<<<<<<< HEAD
 
-ALLOWED_HOSTS = ['46.41.135.147','rewolucja.com.pl']
-=======
+
+
 ALLOWED_HOSTS = ['46.41.135.147','rewolucja.com.pl', 'localhost']
->>>>>>> a7a6b280b7787058518f9690891954d07642cfef
+
 
 
 # Application definition
@@ -170,8 +169,8 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "studio.rewo@gmail.com"
-EMAIL_HOST_PASSWORD = "rewolucja123"
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
 
 #CKEUPLOADER PATH
 CKEDITOR_UPLOAD_PATH = 'uploads/'
