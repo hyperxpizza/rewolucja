@@ -1,13 +1,7 @@
+psycopg2-binary==2.8.4
 braintree==3.57.1
-<<<<<<< HEAD
 certifi==2019.11.28
 chardet==3.0.4
-=======
-certifi==2019.9.11
-cffi==1.13.2
-chardet==3.0.4
-cryptography==2.8
->>>>>>> a7a6b280b7787058518f9690891954d07642cfef
 Django==2.2.1
 django-ckeditor==5.7.0
 django-crispy-forms==1.8.0
@@ -21,14 +15,5 @@ pycparser==2.19
 PyJWT==1.7.1
 pytz==2019.1
 requests==2.22.0
-<<<<<<< HEAD
 sqlparse==0.3.0
 urllib3==1.25.7
-=======
-six==1.13.0
-sqlparse==0.3.0
-stripe==2.38.0
-suds-jurko==0.6
-urllib3==1.25.6
-xmltodict==0.12.0
->>>>>>> a7a6b280b7787058518f9690891954d07642cfef
