@@ -1,6 +1,6 @@
 psycopg2-binary==2.8.4
 braintree==3.57.1
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 Django==2.2.1
 django-ckeditor==5.7.0
